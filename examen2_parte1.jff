@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 7.1.--><structure>
+	<type>fa</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>88.0</x>
+			<y>220.0</y>
+		</state>
+		<state id="1" name="q1">
+			<x>257.0</x>
+			<y>128.0</y>
+			<label>y =1; nn = n; xx = x;</label>
+		</state>
+		<state id="2" name="q2">
+			<x>482.0</x>
+			<y>105.0</y>
+		</state>
+		<state id="3" name="q3">
+			<x>593.0</x>
+			<y>271.0</y>
+			<label>if(xx==x){y = x * y ;}   x = x* x;    n = (n -1)/2;</label>
+			<initial/>
+		</state>
+		<state id="4" name="q6">
+			<x>328.0</x>
+			<y>350.0</y>
+			<label>res = 0</label>
+			<final/>
+		</state>
+		<state id="5" name="q4">
+			<x>644.0</x>
+			<y>102.0</y>
+		</state>
+		<state id="6" name="q7">
+			<x>810.0</x>
+			<y>380.0</y>
+		</state>
+		<state id="7" name="q5">
+			<x>791.0</x>
+			<y>101.0</y>
+			<label> res &lt;= x *y;</label>
+			<final/>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>3</from>
+			<to>2</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>4</from>
+			<to>6</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>5</from>
+			<to>7</to>
+			<read/>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>n != 0</read>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>4</to>
+			<read>n ==0</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read>n &gt;1</read>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>5</to>
+			<read>n ==1</read>
+		</transition>
+		<transition>
+			<from>7</from>
+			<to>6</to>
+			<read/>
+		</transition>
+		<note>
+			<text>variables:
+n
+y
+x
+res</text>
+			<x>55.0</x>
+			<y>31.0</y>
+		</note>
+	</automaton>
+</structure>
